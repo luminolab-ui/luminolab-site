@@ -1,558 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- ======================
-       BASIC SEO SETTINGS
-       ====================== -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Lumino Lab | Web Development, Design, SEO & YouTube Automation</title>
-  <meta name="description" content="Lumino Lab is a professional digital agency offering web development, graphic design, SEO, blogging, and YouTube automation services." />
-  <meta name="keywords" content="Web Development, Graphic Design, SEO, YouTube Automation, Blogging" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NovaCore Studio | Digital Solutions</title>
 
-  <!-- ======================
-       GOOGLE FONTS
-       ====================== -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- ======================
-       MAIN CSS
-       ====================== -->
-  <style>
-    /* ======================
-       PROFESSIONAL UI IMPROVEMENTS
-       ====================== */
-    :root {
-      --primary: #2563eb;
-      --dark: #0f172a;
-      --light: #f8fafc;
-      --gray: #64748b;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:#f8fafc;
+  color:#0f172a;
+}
+header{
+  position:sticky;
+  top:0;
+  background:#fff;
+  box-shadow:0 2px 10px rgba(0,0,0,.05);
+  z-index:1000;
+}
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 8%;
+}
+.logo{
+  font-size:22px;
+  font-weight:700;
+  color:#2563eb;
+}
+.menu{
+  display:flex;
+  gap:24px;
+}
+.menu a{
+  font-size:15px;
+  font-weight:500;
+}
+section{
+  padding:80px 8%;
+}
+.btn{
+  padding:14px 30px;
+  background:#2563eb;
+  color:#fff;
+  border-radius:8px;
+  display:inline-block;
+}
+.hero{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:40px;
+  align-items:center;
+  background:linear-gradient(135deg,#eff6ff,#fff);
+}
+.hero h1{
+  font-size:42px;
+  margin-bottom:16px;
+}
+.hero p{
+  margin-bottom:24px;
+  color:#555;
+}
+.hero img{
+  border-radius:12px;
+}
 
-    /* ======================
-       GLOBAL STYLES
-       ====================== */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+/* SERVICES */
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:24px;
+  margin-top:40px;
+}
+.service-box{
+  background:#fff;
+  padding:28px;
+  border-radius:10px;
+  box-shadow:0 6px 20px rgba(0,0,0,.05);
+}
 
-    body {
-      color: #0f172a;
-      line-height: 1.7;
-      background: var(--light);
-      -webkit-font-smoothing: antialiased;
-    }
+/* PORTFOLIO */
+.portfolio-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+  margin-top:40px;
+}
+.project{
+  position:relative;
+  overflow:hidden;
+  border-radius:12px;
+}
+.project img{
+  width:100%;
+  transition:.4s;
+}
+.project:hover img{
+  transform:scale(1.1);
+}
+.project span{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  color:#fff;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  opacity:0;
+  transition:.3s;
+}
+.project:hover span{
+  opacity:1;
+}
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
+footer{
+  background:#0f172a;
+  color:#fff;
+  text-align:center;
+  padding:24px;
+}
 
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    section {
-      padding: 80px 8%;
-    }
-
-    h1, h2, h3 {
-      font-weight: 600;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 15px 34px;
-      background: linear-gradient(135deg, var(--primary), #1d4ed8);
-      color: #fff;
-      border-radius: 8px;
-      transition: 0.35s ease;
-      font-weight: 600;
-      letter-spacing: 0.3px;
-      box-shadow: 0 10px 25px rgba(37,99,235,0.25);
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 18px 40px rgba(37,99,235,0.35);
-    }
-
-    .btn:hover {
-      background: #1e40af;
-    }
-
-    /* ======================
-       HEADER / NAVIGATION
-       ====================== */
-    header {
-      background: #ffffff;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 8%;
-    }
-
-    /* EDIT LOGO HERE */
-    .logo {
-      font-size: 22px;
-      font-weight: 700;
-      color: #2563eb;
-    }
-
-    .menu {
-      display: flex;
-      gap: 24px;
-    }
-
-    .menu a {
-      font-size: 15px;
-      font-weight: 500;
-    }
-
-    /* ======================
-       HERO SECTION
-       ====================== */
-    .hero {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 40px;
-      align-items: center;
-      background: linear-gradient(135deg, #eff6ff, #ffffff);
-    }
-
-    .hero h1 {
-      font-size: 44px;
-      margin-bottom: 16px;
-    }
-
-    .hero p {
-      margin-bottom: 28px;
-      color: #555;
-    }
-
-    /* ======================
-       SERVICES SECTION
-       ====================== */
-    .services {
-      background: #fff;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .service-box {
-      background: #f9fafb;
-      padding: 30px;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-
-    .service-box:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-    }
-
-    /* ======================
-       PORTFOLIO SECTION
-       ====================== */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      margin-top: 40px;
-    }
-
-    .project {
-      position: relative;
-      overflow: hidden;
-      border-radius: 10px;
-    }
-
-    .project img {
-      transition: 0.4s;
-    }
-
-    .project:hover img {
-      transform: scale(1.1);
-    }
-
-    .project span {
-      position: absolute;
-      inset: 0;
-      background: rgba(0,0,0,0.6);
-      color: #fff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      transition: 0.4s;
-    }
-
-    .project:hover span {
-      opacity: 1;
-    }
-
-    /* ======================
-       ABOUT / TEAM
-       ====================== */
-    .about {
-      background: #fff;
-      text-align: center;
-    }
-
-    /* ======================
-       TESTIMONIALS
-       ====================== */
-    .testimonials {
-      background: #f9fafb;
-    }
-
-    .testimonial-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 24px;
-      margin-top: 40px;
-    }
-
-    .testimonial {
-      background: #fff;
-      padding: 24px;
-      border-radius: 10px;
-    }
-
-    /* ======================
-       CONTACT SECTION
-       ====================== */
-    .contact {
-      background: #fff;
-    }
-
-    form input, form select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 14px;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-    }
-
-    /* ======================
-       FOOTER
-       ====================== */
-    footer {
-      background: #0f172a;
-      color: #fff;
-      text-align: center;
-      padding: 24px;
-    }
-
-    /* ======================
-       RESPONSIVE
-       ====================== */
-    @media(max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;}
+}
+</style>
 </head>
+
 <body>
 
-<!-- ======================
-     HEADER / NAVIGATION
-     ====================== -->
 <header>
-  <div class="nav"><!-- PROFESSIONAL BRAND HEADER -->
-    <div class="logo">Lumino<span style="color:#0f172a">Lab</span></div> <!-- EDIT LOGO TEXT -->
+  <div class="nav">
+    <div class="logo">NovaCore<span style="color:#0f172a">Studio</span></div>
     <div class="menu">
       <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
-      <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#">Login</a> <!-- OPTIONAL -->
     </div>
   </div>
 </header>
 
-<!-- ======================
-     HERO SECTION
-     ====================== -->
-<section class="hero" style="border-bottom:1px solid #e5e7eb">
+<section class="hero">
   <div>
-    <h1>We Build High‑Impact Digital Solutions<br>That Grow Your Business</h1>
-    <p>Premium web development, design, SEO, blogging and YouTube automation — delivered by a focused, reliable small team you can trust.</p>
-    <a href="#contact" class="btn">Get a Free Quote Today</a>
+    <h1>We Build Digital Products<br>That Grow Your Business</h1>
+    <p>Professional web development, design, SEO & automation services trusted by global clients.</p>
+    <a href="#contact" class="btn">Get Free Quote</a>
   </div>
-  <img src="https://via.placeholder.com/500x400" alt="Digital Agency" /> <!-- EDIT HERO IMAGE -->
+
+  <!-- HERO IMAGE -->
+  <img src="hero.jpg" alt="Digital Agency">
 </section>
 
-<!-- ======================
-     SERVICES
-     ====================== -->
-<section class="services" id="services">
+<section id="services">
   <h2>Our Services</h2>
   <div class="service-grid">
-    <div class="service-box"><h3>Web Development</h3><p>Fast, secure and conversion‑focused websites built to scale.</p></div>
-    <div class="service-box"><h3>Graphic Design</h3><p>Brand‑consistent visuals that build credibility and trust.</p></div>
-    <div class="service-box"><h3>YouTube Automation</h3><p>End‑to‑end automation to grow monetized YouTube channels.</p></div>
-    <div class="service-box"><h3>Blogging</h3><p>SEO‑optimized content that attracts and converts traffic.</p></div>
-    <div class="service-box"><h3>SEO Optimization</h3><p>White‑hat SEO strategies for long‑term organic growth.</p></div>
+    <div class="service-box"><h3>Web Development</h3><p>Fast, secure & scalable websites.</p></div>
+    <div class="service-box"><h3>Graphic Design</h3><p>Brand-focused professional designs.</p></div>
+    <div class="service-box"><h3>SEO</h3><p>Long-term organic growth strategies.</p></div>
+    <div class="service-box"><h3>YouTube Automation</h3><p>Complete channel management.</p></div>
   </div>
 </section>
 
-<!-- ======================
-     PORTFOLIO
-     ====================== -->
 <section id="portfolio">
-  <h2>Our Work</h2>
+  <h2>Our Portfolio</h2>
   <div class="portfolio-grid">
-    <div class="project"><img src="https://via.placeholder.com/400x300"><span>Project One</span></div>
-    <div class="project"><img src="https://via.placeholder.com/400x300"><span>Project Two</span></div>
-    <div class="project"><img src="https://via.placeholder.com/400x300"><span>Project Three</span></div>
+
+    <div class="project">
+      <img src="portfolio1.jpg" alt="Project 1">
+      <span>Business Website</span>
+    </div>
+
+    <div class="project">
+      <img src="portfolio2.jpg" alt="Project 2">
+      <span>Landing Page</span>
+    </div>
+
+    <div class="project">
+      <img src="portfolio3.jpg" alt="Project 3">
+      <span>E-commerce Store</span>
+    </div>
+
   </div>
 </section>
 
-<!-- ======================
-     ABOUT
-     ====================== -->
-<section class="about" id="about">
-  <h2>About Us</h2>
-  <p>We are a small, highly skilled team delivering enterprise‑level web development, graphic design, YouTube automation, blogging, and SEO services with transparency and long‑term commitment.</p>
-</section>
-
-<!-- ======================
-     TESTIMONIALS
-     ====================== -->
-<section class="testimonials" style="border-top:1px solid #e5e7eb">
-  <h2>What Clients Say</h2>
-  <div class="testimonial-grid">
-    <div class="testimonial">"Exceptional quality, clear communication, and results beyond expectations."<br><strong>— Verified Client</strong></div>
-    <div class="testimonial">"A professional team that understands business goals, not just design."<br><strong>— Business Owner</strong></div>
-  </div>
-</section>
-
-<!-- ======================
-     CONTACT
-     ====================== -->
-<section class="contact" id="contact">
+<section id="contact">
   <h2>Contact Us</h2>
-
-  <!-- EDIT CONTACT INFO -->
-  <p>Email: contact.luminolab@gmail.com</p>
-  <p>Phone: +123456789</p>
-  <p>We usually reply within 24 hours. WhatsApp support available.</p>
+  <p>Email: contact@novacorestudio.com</p>
+  <p>We reply within 24 hours.</p>
 
   <form>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <select>
-      <option>Service Interest</option>
-      <option>Web Development</option>
-      <option>SEO</option>
-      <option>Design</option>
-    </select>
-    <button class="btn">Send</button>
+    <input type="text" placeholder="Your Name" required><br><br>
+    <input type="email" placeholder="Your Email" required><br><br>
+    <button class="btn">Send Message</button>
   </form>
 </section>
 
-<!-- ======================
-     FOOTER
-     ====================== -->
 <footer>
-  <p>© 2025 Lumino Lab. All Rights Reserved.</p>
+  <p>© 2025 NovaCore Studio. All Rights Reserved.</p>
 </footer>
-
-<!-- ======================
-     AI CHATBOT (TRAINED FAQ BOT)
-     ====================== -->
-<div id="ai-chatbot" style="position:fixed;bottom:20px;right:20px;width:320px;max-width:90%;background:#fff;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.15);display:none;z-index:9999;overflow:hidden">
-  <div style="background:#2563eb;color:#fff;padding:14px;font-weight:600">Lumino AI Assistant</div>
-  <div id="chat-body" style="padding:14px;height:260px;overflow-y:auto;font-size:14px"></div>
-  <div style="display:flex;border-top:1px solid #e5e7eb">
-    <input id="chat-input" type="text" placeholder="Ask about services, pricing..." style="flex:1;padding:12px;border:none;outline:none">
-    <button onclick="sendMessage()" style="padding:12px 16px;border:none;background:#2563eb;color:#fff">Send</button>
-  </div>
-</div>
-
-<button onclick="toggleChatbot()" style="position:fixed;bottom:20px;right:20px;background:#2563eb;color:#fff;border:none;border-radius:50%;width:60px;height:60px;font-size:26px;box-shadow:0 15px 40px rgba(37,99,235,0.4);z-index:9998">🤖</button>
-
-<script>
-  const chatBody = document.getElementById('chat-body');
-
-  const faqBot = [
-    { q: /services|offer/i, a: 'Lumino Lab offers Web Development, Graphic Design, SEO, Blogging, and YouTube Automation services.' },
-    { q: /price|cost|charges/i, a: 'Pricing depends on project scope. Click "Get a Free Quote" or contact us at contact.luminolab@gmail.com.' },
-    { q: /team|who are you/i, a: 'We are a small, professional team focused on delivering high-quality digital solutions.' },
-    { q: /contact|email/i, a: 'You can email us directly at contact.luminolab@gmail.com or use the contact form.' },
-    { q: /seo/i, a: 'Our SEO services focus on long-term, white-hat strategies to grow organic traffic.' }
-  ];
-
-  function toggleChatbot(){
-    const bot = document.getElementById('ai-chatbot');
-    bot.style.display = bot.style.display === 'none' ? 'block' : 'none';
-  }
-
-  function sendMessage(){
-    const input = document.getElementById('chat-input');
-    const msg = input.value.trim();
-    if(!msg) return;
-    chatBody.innerHTML += `<div><strong>You:</strong> ${msg}</div>`;
-
-    let reply = 'Thanks for reaching out! A team member will respond shortly.';
-    for(let item of faqBot){ if(item.q.test(msg)) reply = item.a; }
-
-    setTimeout(()=>{
-      chatBody.innerHTML += `<div style="margin-top:8px"><strong>Lumino AI:</strong> ${reply}</div>`;
-      chatBody.scrollTop = chatBody.scrollHeight;
-    },600);
-
-    input.value = '';
-  }
-</script>
-
-<!-- ======================
-     AI CHATBOT (Tawk.to already added)
-     ====================== -->
-<script>
-  // Optional: Auto open chat after 20 seconds
-  setTimeout(function(){
-    if (window.Tawk_API) {
-      Tawk_API.maximize();
-    }
-  }, 20000);
-</script>
-
-<!-- ======================
-     TAWK.TO CHAT (EDIT PROPERTY ID)
-     ====================== -->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/YOUR_PROPERTY_ID/1abcdef';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-
-
-<!-- ======================
-     HIDDEN ADMIN SYSTEM (PRIVATE – LUMINO LAB ONLY)
-     ====================== -->
-<script>
-/* ======================
-   SIMPLE SECURE ADMIN ACCESS
-   ====================== */
-const ADMIN_PASSWORD = "LuminoLab@2025"; // CHANGE PASSWORD
-
-function openAdmin() {
-  const pass = prompt("Admin Access Required:");
-  if (pass === ADMIN_PASSWORD) {
-    document.getElementById('admin-dashboard').style.display = 'block';
-  } else {
-    alert("Access Denied");
-  }
-}
-
-/* ======================
-   DATA STORAGE (LOCAL)
-   ====================== */
-let records = JSON.parse(localStorage.getItem('luminoRecords')) || [];
-
-function saveRecord() {
-  const client = document.getElementById('clientName').value;
-  const service = document.getElementById('serviceType').value;
-  const amount = document.getElementById('amount').value;
-  const date = new Date().toLocaleDateString();
-
-  if (!client || !service || !amount) return alert('Fill all fields');
-
-  records.push({ client, service, amount, date });
-  localStorage.setItem('luminoRecords', JSON.stringify(records));
-  renderRecords();
-}
-
-function renderRecords() {
-  const table = document.getElementById('recordTable');
-  table.innerHTML = records.map(r => `
-    <tr>
-      <td>${r.client}</td>
-      <td>${r.service}</td>
-      <td>$${r.amount}</td>
-      <td>${r.date}</td>
-    </tr>`).join('');
-}
-
-function exportCSV(){
-  if(!records.length) return alert('No records to export');
-  let csv = 'Client,Service,Earnings,Date
-';
-  records.forEach(r=>{
-    csv += `${r.client},${r.service},${r.amount},${r.date}
-`;
-  });
-  const blob = new Blob([csv],{type:'text/csv'});
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = 'LuminoLab_Records.csv';
-  a.click();
-}
-
-window.onload = renderRecords;
-</script>
-
-<!-- ADMIN DASHBOARD UI -->
-<div id="admin-dashboard" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:#0f172a;color:#fff;z-index:10000;overflow:auto;padding:40px">
-  <h2>🔐 Lumino Lab – Private Admin Dashboard</h2>
-  <p style="opacity:0.8">For internal records & tax documentation only.</p>
-
-  <h3>Add New Client Record</h3>
-  <input id="clientName" placeholder="Client Name" style="padding:10px;width:200px">
-  
-  <input id="amount" placeholder="Earning Amount" type<input id="serviceType" placeholder="Service" style="padding:10px;width:200px">
-   ="number" style="padding:10px;width:160px">
-  <button onclick="saveRecord()" class="btn">Save Record</button>
-  <button onclick="exportCSV()" class="btn" style="background:#16a34a;margin-left:10px">Export CSV</button>
-
-  <h3 style="margin-top:30px">Saved Records</h3>
-  <table border="1" cellpadding="10" style="background:#fff;color:#000;border-collapse:collapse">
-    <thead>
-      <tr>
-        <th>Service</th>
-        <th>Earnings</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-    <tbody id="recordTable"></tbody>
-  </table>
-
-  <p style="margin-top:20px;font-size:13px;opacity:0.7">
-    Records are stored locally in your browser and can be exported for transparency, tax, and accounting reference.
-  </p>
-
-  <button onclick="document.getElementById('admin-dashboard').style.display='none'" class="btn" style="margin-top:20px">Close Dashboard</button>
-</div>
-
-<!-- SECRET ADMIN TRIGGER (NOT VISIBLE) -->
-<div onclick="openAdmin()" style="position:fixed;bottom:0;left:0;width:20px;height:20px;opacity:0"></div>
 
 </body>
 </html>
