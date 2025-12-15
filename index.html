@@ -1,148 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NovaCore Studio | Digital Solutions</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nexora Digital | Professional Digital Agency</title>
+  <meta name="description" content="Nexora Digital is a professional digital agency providing web development, design, SEO, branding and automation services." />
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-body{
-  background:#f8fafc;
-  color:#0f172a;
-}
-header{
-  position:sticky;
-  top:0;
-  background:#fff;
-  box-shadow:0 2px 10px rgba(0,0,0,.05);
-  z-index:1000;
-}
-.nav{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:18px 8%;
-}
-.logo{
-  font-size:22px;
-  font-weight:700;
-  color:#2563eb;
-}
-.menu{
-  display:flex;
-  gap:24px;
-}
-.menu a{
-  font-size:15px;
-  font-weight:500;
-}
-section{
-  padding:80px 8%;
-}
-.btn{
-  padding:14px 30px;
-  background:#2563eb;
-  color:#fff;
-  border-radius:8px;
-  display:inline-block;
-}
-.hero{
-  display:grid;
-  grid-template-columns:1.2fr 1fr;
-  gap:40px;
-  align-items:center;
-  background:linear-gradient(135deg,#eff6ff,#fff);
-}
-.hero h1{
-  font-size:42px;
-  margin-bottom:16px;
-}
-.hero p{
-  margin-bottom:24px;
-  color:#555;
-}
-.hero img{
-  border-radius:12px;
-}
+  <style>
+    :root{--primary:#2563eb;--dark:#0f172a;--light:#f8fafc;--gray:#64748b}
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif}
+    body{background:var(--light);color:var(--dark);line-height:1.7}
+    img{max-width:100%;display:block;border-radius:10px}
+    section{padding:80px 8%}
+    h1,h2,h3{font-weight:600}
+    a{text-decoration:none;color:inherit}
 
-/* SERVICES */
-.service-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:24px;
-  margin-top:40px;
-}
-.service-box{
-  background:#fff;
-  padding:28px;
-  border-radius:10px;
-  box-shadow:0 6px 20px rgba(0,0,0,.05);
-}
+    header{background:#fff;position:sticky;top:0;z-index:999;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .nav{display:flex;justify-content:space-between;align-items:center;padding:18px 8%}
+    .logo{font-size:24px;font-weight:700;color:var(--primary)}
+    .menu{display:flex;gap:24px}
 
-/* PORTFOLIO */
-.portfolio-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:20px;
-  margin-top:40px;
-}
-.project{
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-}
-.project img{
-  width:100%;
-  transition:.4s;
-}
-.project:hover img{
-  transform:scale(1.1);
-}
-.project span{
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.6);
-  color:#fff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  opacity:0;
-  transition:.3s;
-}
-.project:hover span{
-  opacity:1;
-}
+    .btn{display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;border-radius:8px;font-weight:600}
 
-footer{
-  background:#0f172a;
-  color:#fff;
-  text-align:center;
-  padding:24px;
-}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#eef2ff,#fff)}
+    .hero h1{font-size:44px;margin-bottom:16px}
+    .hero p{color:#555;margin-bottom:26px}
 
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;}
-}
-</style>
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:40px}
+    .card{background:#fff;padding:30px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.06);transition:.3s}
+    .card:hover{transform:translateY(-6px)}
+
+    .portfolio img{height:220px;object-fit:cover;width:100%}
+
+    .pricing .card{text-align:center}
+    .pricing h2{color:var(--primary)}
+
+    footer{background:#0f172a;color:#fff;text-align:center;padding:28px;margin-top:60px}
+
+    #chatbot{position:fixed;bottom:20px;right:20px;width:320px;background:#fff;border-radius:14px;box-shadow:0 20px 40px rgba(0,0,0,.2);display:none;overflow:hidden}
+    #chat-body{height:240px;overflow-y:auto;padding:14px;font-size:14px}
+
+    @media(max-width:900px){.hero{grid-template-columns:1fr}}
+  </style>
 </head>
-
 <body>
 
 <header>
   <div class="nav">
-    <div class="logo">NovaCore<span style="color:#0f172a">Studio</span></div>
+    <div class="logo">Nexora<span style="color:#0f172a">Digital</span></div>
     <div class="menu">
       <a href="#">Home</a>
       <a href="#services">Services</a>
       <a href="#portfolio">Portfolio</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </div>
   </div>
@@ -150,62 +62,62 @@ footer{
 
 <section class="hero">
   <div>
-    <h1>We Build Digital Products<br>That Grow Your Business</h1>
-    <p>Professional web development, design, SEO & automation services trusted by global clients.</p>
-    <a href="#contact" class="btn">Get Free Quote</a>
+    <h1>High‑Impact Digital Solutions<br>For Modern Businesses</h1>
+    <p>We design, build and scale professional websites and digital systems that convert visitors into clients.</p>
+    <a href="#contact" class="btn">Get Free Consultation</a>
   </div>
-
-  <!-- HERO IMAGE -->
   <img src="hero.jpg" alt="Digital Agency">
 </section>
 
 <section id="services">
   <h2>Our Services</h2>
-  <div class="service-grid">
-    <div class="service-box"><h3>Web Development</h3><p>Fast, secure & scalable websites.</p></div>
-    <div class="service-box"><h3>Graphic Design</h3><p>Brand-focused professional designs.</p></div>
-    <div class="service-box"><h3>SEO</h3><p>Long-term organic growth strategies.</p></div>
-    <div class="service-box"><h3>YouTube Automation</h3><p>Complete channel management.</p></div>
+  <div class="grid">
+    <div class="card"><h3>Web Development</h3><p>Fast, secure and scalable websites.</p></div>
+    <div class="card"><h3>Graphic Design</h3><p>Professional branding & UI design.</p></div>
+    <div class="card"><h3>SEO Optimization</h3><p>Rank higher & get organic traffic.</p></div>
+    <div class="card"><h3>Blogging</h3><p>SEO‑optimized content marketing.</p></div>
+    <div class="card"><h3>YouTube Automation</h3><p>Complete channel automation systems.</p></div>
   </div>
 </section>
 
-<section id="portfolio">
+<section id="portfolio" class="portfolio">
   <h2>Our Portfolio</h2>
-  <div class="portfolio-grid">
+  <div class="grid">
+    <img src="portfolio1.jpg" alt="Project">
+    <img src="portfolio2.jpg" alt="Project">
+    <img src="portfolio3.jpg" alt="Project">
+  </div>
+</section>
 
-    <div class="project">
-      <img src="portfolio1.jpg" alt="Project 1">
-      <span>Business Website</span>
-    </div>
-
-    <div class="project">
-      <img src="portfolio2.jpg" alt="Project 2">
-      <span>Landing Page</span>
-    </div>
-
-    <div class="project">
-      <img src="portfolio3.jpg" alt="Project 3">
-      <span>E-commerce Store</span>
-    </div>
-
+<section id="pricing" class="pricing">
+  <h2>Pricing Plans</h2>
+  <div class="grid">
+    <div class="card"><h3>Basic</h3><h2>$199</h2><p>1 Page Website<br>Basic SEO<br>Email Support</p></div>
+    <div class="card"><h3>Standard</h3><h2>$499</h2><p>5 Pages Website<br>SEO Optimization<br>Chat Support</p></div>
+    <div class="card"><h3>Premium</h3><h2>$999</h2><p>Custom Website<br>Advanced SEO<br>Priority Support</p></div>
   </div>
 </section>
 
 <section id="contact">
   <h2>Contact Us</h2>
-  <p>Email: contact@novacorestudio.com</p>
-  <p>We reply within 24 hours.</p>
-
-  <form>
-    <input type="text" placeholder="Your Name" required><br><br>
-    <input type="email" placeholder="Your Email" required><br><br>
-    <button class="btn">Send Message</button>
-  </form>
+  <p>Email: contact@nexoradigital.com</p>
+  <p>Response time: within 24 hours</p>
 </section>
 
-<footer>
-  <p>© 2025 NovaCore Studio. All Rights Reserved.</p>
-</footer>
+<footer>© 2025 Nexora Digital. All rights reserved.</footer>
+
+<div id="chatbot">
+  <div style="background:#2563eb;color:#fff;padding:14px;font-weight:600">Nexora AI Assistant</div>
+  <div id="chat-body"></div>
+  <input id="chat-input" placeholder="Ask about services or pricing" style="width:100%;padding:12px;border:none">
+</div>
+
+<button onclick="toggleBot()" style="position:fixed;bottom:20px;right:20px;width:60px;height:60px;border-radius:50%;background:#2563eb;color:#fff;border:none;font-size:26px">🤖</button>
+
+<script>
+function toggleBot(){const b=document.getElementById('chatbot');b.style.display=b.style.display==='block'?'none':'block'}
+document.getElementById('chat-input').addEventListener('keypress',e=>{if(e.key==='Enter'){const m=e.target.value;const c=document.getElementById('chat-body');c.innerHTML+=`<div><b>You:</b> ${m}</div><div><b>Nexora:</b> Thanks for contacting us! We'll guide you.</div>`;c.scrollTop=c.scrollHeight;e.target.value='';}})
+</script>
 
 </body>
 </html>
